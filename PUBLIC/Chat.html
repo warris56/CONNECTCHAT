@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ConnectChat - Chat</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js"></script>
+</head>
+<body>
+    <div class="container chat-container">
+        <header class="chat-header">
+            <div class="logo">
+                <h1>ConnectChat</h1>
+            </div>
+            <div class="user-profile">
+                <span id="current-user">Loading...</span>
+                <button id="logout-btn" class="btn secondary">Logout</button>
+            </div>
+        </header>
+
+        <main class="chat-main">
+            <aside class="user-list">
+                <div class="search-box">
+                    <input type="text" id="user-search" placeholder="Search users...">
+                </div>
+                <h3>Active Users</h3>
+                <ul id="users-list">
+                    <!-- User list will be populated here -->
+                    <li class="user-item">Loading users...</li>
+                </ul>
+            </aside>
+            
+            <section class="chat-area">
+                <div class="chat-header">
+                    <div id="selected-user">Select a user to start chatting</div>
+                </div>
+                
+                <div class="messages-container" id="messages">
+                    <!-- Messages will be populated here -->
+                    <div class="empty-chat-message">
+                        <i class="fas fa-comments"></i>
+                        <p>Select a user from the list to start chatting</p>
+                    </div>
+                </div>
+                
+                <div class="message-input">
+                    <form id="message-form">
+                        <input type="text" id="message-input" placeholder="Type your message..." disabled>
+                        <button type="submit" id="send-button" disabled>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </section>
+        </main>
+    </div>
+    
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore-compat.js"></script>
+    
+    <script src="js/auth.js"></script>
+    <script src="js/chat.js"></script>
+</body>
+</html>
